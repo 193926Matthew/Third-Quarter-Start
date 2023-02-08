@@ -12,3 +12,12 @@ def update():
     creature.left = creature.left + 2
     if creature.left > WIDTH:
         creature.right = 0
+
+def on_mouse_down(pos):
+    if creature.collidepoint(pos):
+        print("Foolish")
+        sounds.boom.play()
+        creature.image = 'happy'
+    else:
+        print("...")
+        creature.image = 'sad'
